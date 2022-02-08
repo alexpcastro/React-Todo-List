@@ -1,11 +1,7 @@
 import { Component } from "react";
 
-export class TaskList extends Component {
-  render() {
-    return (
-      <ul className="navbar">
-        <li>Test</li>
-      </ul>
-    );
-  }
+export function TaskList(props) {
+  const tasks = props.tasks;
+  const taskListItems = tasks.map((tasks, key) => <li key={key}>{tasks}</li>);
+  return <ul>{taskListItems}</ul>;
 }
